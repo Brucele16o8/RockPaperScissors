@@ -27,3 +27,9 @@ extension MoveViewModel: MovePresentable {
     self.move.beats(Move(rawValue: other.imageName)!)
   }
 }
+
+extension MoveViewModel: Equatable {
+  static func == (lhs: MoveViewModel, rhs: MoveViewModel) -> Bool {
+    lhs.move == rhs.move
+  }
+}

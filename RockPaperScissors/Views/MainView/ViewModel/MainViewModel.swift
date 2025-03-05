@@ -27,7 +27,7 @@ class MainViewModel: ObservableObject, GameViewModelProtocol {
   func playMove(_ move: MoveViewModel) {
     playerMove = move
     let result = playerMove?.beat(opponentMove!) ?? false
-    if (result && expectedResult == .win) || (!result && expectedResult == .lose) {
+    if (result && expectedResult == .win) || (!result && expectedResult == .lose && playerMove != opponentMove) {
       score += 1
       scoreTitle = "Correct!"
       alertMessage = "Keep going!"
